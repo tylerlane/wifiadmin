@@ -1,0 +1,26 @@
+<% form_for(:survey, :action => "send_survey"  ) do |form| %>
+
+<h1>Survey Request</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td><%= form.text_field :address %></td>
+  </tr>
+  <tr>
+    <th>City</th>
+    <td><%= form.text_field :city %>
+  </tr>
+  <tr>
+    <th>State</th>
+    <td><%= form.text_field :state %>
+  </tr>
+  <tr>
+    <td colspan="2"><%= submit_tag "Submit" %></td>
+  </tr>
+</table>
+
+<% end %>

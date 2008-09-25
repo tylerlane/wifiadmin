@@ -1,0 +1,43 @@
+<p>
+  <b>Id:</b>
+  <%=h @ip.id %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%=h @ip.ip_address %>
+</p>
+
+<p>
+  <b>Subnet:</b>
+  <%=h @ip.subnet %>
+</p>
+
+<p>
+  <b>Mac address:</b>
+  <%=h @ip.mac_address %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @ip.name %>
+</p>
+
+<p>
+  <b>Ssid:</b>
+  <%=h @ip.ssid %>
+</p>
+
+<p>
+  <b>Channel:</b>
+  <%=h @ip.channel %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @ip.comment_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_ip_path(@ip) %> |
+<%= link_to 'Back', ips_path %>

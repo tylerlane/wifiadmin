@@ -1,0 +1,33 @@
+<% title " Survey Lists"  %>
+<div align="center">
+  <h1>Surveys</h1>
+    <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "NEW"  ) %>">New</a> |
+    <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "READY"  ) %>">Ready</a> |
+    <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "INSTALLED"  ) %>">Installed</a> |
+    <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "NO-GO"  ) %>">No-Go</a> | 
+    <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "all"  ) %>">All</a>
+  <p />
+  <table width="100%">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Date</th>
+        <td>Status</th>
+    </tr>
+
+    <% for survey in @surveys %>
+        <tr class="list" onClick="top.location.href='<%= url_for( :controller => :surveys, :action => "show", :only_path =>false, :protocol => 'http', :id => survey.id  ) %>';return true;">
+            <td><%=h survey.name %></td>
+            <td><%=h survey.address %></td>
+            <td><%=h survey.city %></td>
+            <td><%=h survey.phone_number %></td>
+            <td><%=h survey.created_at.strftime( "%m/%d/%Y") %></td>
+            <td><%=h survey.survey_status %></td>
+        </tr>
+    <% end %>
+ </table>
+ <br />
+<%= link_to 'New survey', new_survey_path %>
+</div>

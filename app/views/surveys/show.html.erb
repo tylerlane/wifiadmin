@@ -1,0 +1,64 @@
+<div align="center">
+<table width="500px">
+  <tr>
+    <th colspan="2"><h2>Survey</h2></th>
+  </tr>
+  <tr>
+    <td><b>Customer Name</b></td>
+    <td><%=h @survey.name %></td>
+  </tr>
+  <tr>
+    <td><b>Survey Status</b></td>
+    <td><%=h @survey.survey_status %></td>
+  </tr>
+  <tr>
+    <td><b>Address</b></td>
+    <td><%=h @survey.address %></td>
+  </tr>
+  <tr>
+    <td><b>City</b></td>
+    <td><%=h @survey.city %></td>
+  </tr>
+  <tr>
+    <td><b>State</b></td>
+    <td><%=h @survey.state %></td>
+  </tr>
+  <tr>
+    <td><b>Zip</b></td>
+    <td><%=h @survey.zip %></td>
+  </tr>
+  <tr>
+    <td><b>Phone Number</b></td>
+    <td><%=h @survey.phone_number %></td>
+  </tr>
+  <tr>
+    <td><b>Email</b></td>
+    <td><%=h @survey.email %></td>
+  </tr>
+  <tr>
+    <td><b>Created On</b></td>
+    <td><%=h @survey.created_at.strftime( "%B %d, %Y") %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Directions</b></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%=h @survey.directions %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Notes</b></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%=h @survey.notes %>
+    </td>
+  </tr>
+  </table>
+  
+  <br />
+  
+  <%= link_to 'Edit', edit_survey_path(@survey) %> |
+  <%= link_to 'Back', surveys_path %>
+</div>

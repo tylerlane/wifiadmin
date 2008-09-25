@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @disconnect.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @disconnect.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @disconnect.city %>
+</p>
+
+<p>
+  <b>Phone Number:</b>
+  <%=h @disconnect.phone_number %>
+</p>
+
+<p>
+  <b>Billmax acct:</b>
+  <%=h @disconnect.billmax_acct %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @disconnect.status %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @disconnect.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_disconnect_path(@disconnect) %> |
+<%= link_to 'Back', disconnects_path %>

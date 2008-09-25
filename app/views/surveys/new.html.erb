@@ -1,0 +1,54 @@
+<% form_for(@survey) do |f| %>
+  <table>
+    <tr>
+      <th colspan="2"><h2>Add a Survey</h2></th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.error_messages || "&nbsp;" %>
+      </td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :name %></b></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :address %></b></td>
+      <td><%= f.text_field :address %></td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :city %></b></td>
+      <td><%= f.text_field :city %></td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :state %></b></td>
+      <td><%= f.text_field :state %></td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :zip %></b></td>
+      <td><%= f.text_field :zip %></td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :phone_number %></b></td>
+      <td><%= f.text_field :phone_number %></td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :email %></b></td>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><b><%=f.label :directions %></b></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.text_area :directions %>
+      </td>
+    </tr>
+    <tr>
+      <%= hidden_field_tag('survey[survey_status]', 'NEW') %>
+      <td colspan="2"> <%= f.submit "Add Survey" %></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= link_to 'Back', surveys_path %>

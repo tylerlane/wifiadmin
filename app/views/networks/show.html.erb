@@ -1,0 +1,28 @@
+<p>
+  <b>Id:</b>
+  <%=h @network.id %>
+</p>
+
+<p>
+  <b>Net name:</b>
+  <%=h @network.net_name %>
+</p>
+
+<p>
+  <b>Net address:</b>
+  <%=h @network.net_address %>
+</p>
+
+<p>
+  <b>Subnet:</b>
+  <%=h @network.subnet %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @network.comment_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_network_path(@network) %> |
+<%= link_to 'Back', networks_path %>

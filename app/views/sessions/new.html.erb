@@ -1,0 +1,15 @@
+<div align="center">
+  <% form_tag session_path do -%>
+  <p><label for="login"><b>Login</b></label><br/>
+  <%= text_field_tag 'login' %></p>
+
+  <p><label for="password"><b>Password</b></label><br/>
+  <%= password_field_tag 'password' %></p>
+
+  <p><label for="remember_me"><b>Remember me:</b></label>
+  <%= check_box_tag 'remember_me' %></p>
+  
+
+  <p><%= submit_tag 'Log in' %></p>
+  <% end -%>
+</div>

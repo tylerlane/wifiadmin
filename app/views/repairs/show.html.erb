@@ -1,0 +1,32 @@
+<p>
+  <b>Name:</b>
+  <%=h @repair.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @repair.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @repair.city %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%=h @repair.phone_number %>
+</p>
+
+<p>
+  <b>Billmax acct:</b>
+  <%=h @repair.billmax_acct %>
+</p>
+<p>
+  <b>Notes:</b>
+  <%=h @repair.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_repair_path(@repair) %> |
+<%= link_to 'Back', repairs_path %>

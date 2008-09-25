@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  customer: MyString
+  city: MyString
+  number: MyString
+  billmax_acct: 
+  status: MyString
+  notes: MyText
+
+two:
+  name: MyString
+  customer: MyString
+  city: MyString
+  number: MyString
+  billmax_acct: 
+  status: MyString
+  notes: MyText

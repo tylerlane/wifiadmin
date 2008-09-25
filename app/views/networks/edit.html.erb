@@ -1,0 +1,28 @@
+<h1>Editing network</h1>
+
+<%= error_messages_for :network %>
+
+<% form_for(@network) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :net_name %>
+  </p>
+
+  <p>
+    <b>Network Address</b><br />
+    <%= f.text_field :net_address %>
+  </p>
+
+  <p>
+    <b>Subnet</b><br />
+    <%= f.text_field :subnet %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @network %> |
+<%= link_to 'Back', networks_path %> |
+<%= link_to 'Delete', :action => "destroy", :id => @network.id0 %>

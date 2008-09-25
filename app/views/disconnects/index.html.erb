@@ -1,0 +1,27 @@
+<div align="center">
+  <h1>Listing disconnects</h1>
+
+  <table width="100%">
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Phone No</th>
+    </tr>
+
+  <% for disconnect in @disconnects %>
+    <tr class="list" onClick="top.location.href='<%= url_for( :controller => :disconnects, :action => "show", :only_path =>false, :protocol => 'http', :id => disconnect.id  ) %>';return true;">
+      <td><%=h disconnect.name %></td>
+      <td><%=h disconnect.address %></td>
+      <td><%=h disconnect.city %></td>
+      <td><%=h disconnect.phone_number %></td>
+      <td><%=h disconnect.billmax_acct %></td>
+      <td><%=h disconnect.status %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New disconnect', new_disconnect_path %>
+</div>

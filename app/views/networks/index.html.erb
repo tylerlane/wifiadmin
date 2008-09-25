@@ -1,0 +1,27 @@
+<div align="center">
+<h2>Available Networks</h2>
+<br />
+
+<table border="0" width="75%">
+  <tr class="listheader">
+    <th>Name</th>
+    <th>Network Address</th>
+    <!--<th colspan="2"><div align="left">Subnet</div></th>-->
+    <th>&nbsp;</th>
+  </tr>
+
+<% for network in @networks %>
+  <tr class="list" onClick="top.location.href='<%= url_for( :controller => :ips, :action => "index", :only_path =>false, :protocol => 'http', :network_id => network.id  ) %>';return true;">
+    <td><%=h network.net_name %></td>
+    <td><%=h network.net_address %></td>
+    <!--<td><%=h network.subnet %></td>-->
+    <!--<td><%= link_to 'Show', :controller => :ips,  :action => "index", :network_id => network.id  %></td>-->
+    <td><%= link_to 'Edit', edit_network_path(network) %></td>
+    <!--<td><%= link_to 'Delete', network, :confirm => 'Are you sure?', :method => :delete %></td>-->
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Add Network', new_network_path %>
+</div>

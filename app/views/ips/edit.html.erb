@@ -1,0 +1,68 @@
+<% @page_title = @ip.ip_address %>
+<div align="center">
+<br />
+<div class="header_text">Edit IP:<%= @ip.ip_address %></div>
+<br />
+<%= error_messages_for :ip %>
+<br />
+<% form_for :ip, :url => {:action => "update" },:html => { :method => :put }  do |f| %>
+<table class="list" width="350">
+    <tr>
+        <td class="listheader">IP Address</td>
+        <td class="list"><%=f.text_field :ip_address %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Subnet Mask</td>
+        <td class="list"><%=f.text_field :subnet %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Mac Address</td>
+        <td class="list"><%=f.text_field :mac_address %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Name</td>
+        <td class="list"><%=f.text_field :name %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Device Type</td>
+        <td class="list"><%=f.text_field :device_type %></td>
+    </tr>
+    <tr>
+        <td class="listheader">SSID</td>
+        <td class="list"><%=f.text_field :ssid %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Channel</td>
+        <td class="list"><%=f.text_field :channel %></td>
+    </tr>
+    <tr>
+        <td class="list">&nbsp;</td>
+        <td class="list">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="listheader">Network Name</td>
+        <td class="list"><%=h @network.net_name %></td>
+    </tr>
+    <tr>
+        <td class="list">&nbsp;</td>
+        <td class="list">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="listheader">Created On</td>
+        <td class="list"><%=h @ip.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+    <tr>
+        <td class="listheader">Last Updated</td>
+        <td class="list"><%=h time_ago_in_words( @ip.updated_at ) %></td>
+    </tr>
+    <tr>
+        <td align="center" class="list" colspan="2"><%= f.submit "Update" %></td>
+    </tr>
+</table>
+<% end %>
+
+<br />
+<br />
+
+
+<%= link_to 'Back', { :action => "show", :network_id => @ip.network_id, :ip =>@ip.id} %>
+</div>

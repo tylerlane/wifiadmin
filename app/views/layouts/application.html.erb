@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- ==========================================================	-->
+<!--	Created by Devit Schizoper                          	-->
+<!--	Created HomePages http://LoadFoo.starzonewebhost.com   	-->
+<!--	Created Day 01.12.2006                              	-->
+<!-- ========================================================== -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="author" content="LoadFoO" />
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="key, words" />
+    <title><%= yield( :title) || "JLD Tech Services: Wireless Admin" %></title>
+    <%= stylesheet_link_tag 'style.css' %>
+    <%= stylesheet_link_tag 'scaffold.css' %>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'textsizer' %>
+    <%= javascript_include_tag 'rel' %>
+</head>
+<body>
+<div id="wrap">
+   <div id="top">
+      <h2><a href="http://wireless.positech.net/" title="Back to main page">JLD Tech Admin</a></h2>
+      <div id="menu">
+        <ul>
+          <% if logged_in? %>
+            <li><a href="http://wireless.positech.net/" class="current">Admin</a></li>
+            <li><a href="http://cacti.positech.net/" target="_blank">Cacti</a></li>
+            <li><a href="http://nixapop.positech.net/" target="_blank">Nixa NR</a></li>
+            <li><a href="http://wireless.positech.net/noc/status-monitor.php" target="_blank">Buffalo NR</a></li>
+            <li><a href="<%= url_for :controller => '/mini/index.php' %>" target="_blank">Speed Test</a></li>
+            <li><%= link_to 'Logout', logout_path %></li>
+          <% else %>
+            <li><%=link_to 'Login', login_path %></li>
+        </ul>
+
+        <%  end %>
+      </div>
+    </div>
+    <div id="content">
+        <div id="left">
+            <%= yield  %>
+        </div>
+        <div id="right">
+            <% if logged_in? %>
+            <ul id="nav">
+                <li><%= link_to 'Surveys', surveys_path %></li>
+                <li><%= link_to 'Repairs', repairs_path %></li>
+                <li><%= link_to 'Disconnects', disconnects_path %></li>
+                <li><%= link_to 'Charts', networks_path %></li>
+                <li><a href="#">Inventory</a></li>
+            </ul>
+            <% end %>
+            <!--<div class="box">
+                    <h2 style="margin-top:17px">Recent Entries</h2>
+                    <ul>
+                            <li><a href="#">Recent Entries1</a> <i>01 Des 06</i></li>
+
+                            <li><a href="#">Recent Entries2</a> <i>01 Des 06</i></li>
+                            <li><a href="#">Recent Entries3</a> <i>01 Des 06</i></li>
+                            <li><a href="#">Recent Entries4</a> <i>01 Des 06</i></li>
+                            <li><a href="#">Recent Entries5</a> <i>01 Des 06</i></li>
+
+                    </ul>
+            </div>-->
+        </div>
+        <div id="clear"></div></div>
+        <div id="footer">
+            <p>Copyright 2008 JLD Tech Services, Inc. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer" rel="external">XHTML</a></p>
+        </div>
+</div>
+</body>
+</html>
+

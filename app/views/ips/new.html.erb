@@ -1,0 +1,49 @@
+<div align="center">
+<br />
+<div class="header_text">New IP</div>
+<p>
+<%= error_messages_for :ip %>
+<br />
+<% form_for(@ip) do |f| %>
+<%= hidden_field_tag 'network_id', params[:network_id] %>
+<table class="list" width="350">
+    <tr>
+        <td class="listheader">IP Address</td>
+        <td class="list"><%=f.text_field :ip_address %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Subnet Mask</td>
+        <td class="list"><%=f.text_field :subnet %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Mac Address</td>
+        <td class="list"><%=f.text_field :mac_address %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Name</td>
+        <td class="list"><%=f.text_field :name %></td>
+    </tr>
+    <tr>
+        <td class="listheader">SSID</td>
+        <td class="list"><%=f.text_field :ssid %></td>
+    </tr>
+    <tr>
+        <td class="listheader">Channel</td>
+        <td class="list"><%=f.text_field :channel %></td>
+    </tr>
+    <tr>
+        <td class="list">&nbsp;</td>
+        <td class="list">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="listheader">Network Name</td>
+        <td class="list"></td>
+    </tr>
+    <tr>
+        <td class="list" colspan="2"><div align="center"><%= f.submit "Create" %></td>
+    </tr>
+</table>
+<% end %>
+<br />
+<%= link_to 'Back', { :action => "index", :network_id => params[:network_id] } %>
+</div>

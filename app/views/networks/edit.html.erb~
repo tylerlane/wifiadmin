@@ -1,0 +1,37 @@
+<h1>Editing network</h1>
+
+<%= error_messages_for :network %>
+
+<% form_for(@network) do |f| %>
+  <p>
+    <b>Id</b><br />
+    <%= f.text_field :id %>
+  </p>
+
+  <p>
+    <b>Net name</b><br />
+    <%= f.text_field :net_name %>
+  </p>
+
+  <p>
+    <b>Net address</b><br />
+    <%= f.text_field :net_address %>
+  </p>
+
+  <p>
+    <b>Subnet</b><br />
+    <%= f.text_field :subnet %>
+  </p>
+
+  <p>
+    <b>Comment</b><br />
+    <%= f.text_field :comment_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @network %> |
+<%= link_to 'Back', networks_path %>

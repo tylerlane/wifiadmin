@@ -1,0 +1,38 @@
+<% title " Repair Lists"  %>
+<div align="center">
+<h1>Listing repairs</h1>
+  <a href="<%= url_for( :controller =>:repairs, :action => "index", :only_path => "true", :protocol => "http", :completed => "0"  ) %>">New</a> |
+  <a href="<%= url_for( :controller =>:repairs, :action => "index", :only_path => "true", :protocol => "http", :completed => "1"  ) %>">Completed</a> |
+  <a href="<%= url_for( :controller =>:repairs, :action => "index", :only_path => "true", :protocol => "http", :completed => "all"  ) %>">All</a>
+
+<table width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Phone number</th>
+    <th>Date</th>
+    <th>Completed?</th>
+  </tr>
+
+<% for repair in @repairs %>
+  <tr class="list">
+    <td><%=h repair.name %></td>
+    <td><%=h repair.address %></td>
+    <td><%=h repair.city %></td>
+    <td><%=h repair.phone_number %></td>
+    <td><%=h repair.created_at.strftime( "%m/%d/%Y") %></td>
+    <td>
+        <%= check_box_tag "repair[completed]", "1" , repair.completed, :onclick => toggle_value(repair) %>
+        <%= image_tag "spinner.gif", :id => "spinner-#{repair.id}" , :style => 'display: none' %>
+        <%= link_to 'Show', repair_path(repair) %>
+    </td>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New repair', new_repair_path %>
+</div>

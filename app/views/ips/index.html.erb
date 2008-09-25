@@ -1,0 +1,34 @@
+<div align="center">
+    <div class="header_text">
+      <h1><%= @network.net_name %> - <%= @network.net_address %> / <%=@network.subnet %></h1>
+        <% title  @network.net_name %>
+    </div>
+<br />
+
+<table border="0">
+  <tr class="listheader">
+    <th>Ip address</th>
+    <th>MAC address</th>
+    <th width="40%">Name</th>
+    <th width="10%">Ssid</th>
+
+  </tr>
+
+<% for ip in @ips %>
+  <tr class="list" onClick="top.location.href='<%= url_for( :controller => :ips, :action => "edit", :only_path =>false, :protocol => 'http', :network_id => ip.network_id, :id => ip.id  ) %>';return true;">
+    <td><%=h ip.ip_address %></td>
+    <td><%=h ip.mac_address %></td>
+    <td><%=h ip.name %></td>
+    <td><%=h ip.ssid %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add IP',  :action => "new",  :network_id => params[ "network_id" ]   %> <br />
+<%= link_to 'Back', :controller => "networks", :action => "index" %>
+
+
+<br />
+</div>

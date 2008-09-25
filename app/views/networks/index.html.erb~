@@ -1,0 +1,27 @@
+<div align="center">
+<h1>Listing networks</h1>
+
+
+<table border="1">
+  <tr class="list">
+    <th>Name</th>
+    <th>Network Address</th>
+    <th>Subnet</th>
+    <th colspan="3">&nbsp;</th>
+  </tr>
+
+<% for network in @networks %>
+  <tr class="list">
+    <td><%=h network.net_name %></td>
+    <td><%=h network.net_address %></td>
+    <td><%=h network.subnet %></td>
+    <td><%= link_to 'Show', :controller => :ips,  :action => "index", :network_id => network.id  %></td>
+    <td><%= link_to 'Edit', edit_network_path(network) %></td>
+    <td><%= link_to 'Delete', network, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'New network', new_network_path %>
+</div>
