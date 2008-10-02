@@ -16,7 +16,7 @@
   </tr>
 
 <% for repair in @repairs %>
-  <tr class="list" onClick="top.location.href='<%= url_for( :controller => :repairs, :action => "show", :only_path =>false, :protocol => 'http', :id => repair.id  ) %>';return true;">>
+  <tr class="list" onClick="top.location.href='<%= url_for( :controller => :repairs, :action => "show", :only_path =>false, :protocol => 'http', :id => repair.id  ) %>';return true;">
     <td><%=h repair.name %></td>
     <td><%=h repair.address %></td>
     <td><%=h repair.city %></td>
