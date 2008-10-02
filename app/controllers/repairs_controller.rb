@@ -4,13 +4,13 @@ class RepairsController < ApplicationController
   # GET /repairs
   # GET /repairs.xml
   def index
-    if params[:completed].nil?
-      @repairs = Repair.find(:all, :conditions=>[ "completed = 0"], :order => "created_at ASC" )
+    if params[:status].nil?
+      @repairs = Repair.find(:all, :conditions=>[ "status = ?", 'NEW'], :order => "created_at ASC" )
     else
-      if params[:completed] == "all"
+      if params[:status] == "ALL"
         @repairs = Repair.find(:all, :order=> "created_at ASC" )
       else
-        @repairs = Repair.find(:all, :conditions => [ "completed = ?", params[:completed]], :order => "created_at ASC" )
+        @repairs = Repair.find(:all, :conditions => [ "status = ?", params[:status]], :order => "created_at ASC" )
       end
     end
 

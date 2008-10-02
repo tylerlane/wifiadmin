@@ -25,7 +25,7 @@
   </p>
   <p>
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+     <%= select_tag "repair[status]", options_for_select(["NEW","COMPLETED"]) %>
   </p>
   <p>
     <%= f.label :notes %><br />
