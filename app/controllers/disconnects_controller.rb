@@ -3,13 +3,16 @@ class DisconnectsController < ApplicationController
   # GET /disconnects
   # GET /disconnects.xml
   def index
-    @disconnects = Disconnect.find(:all)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @disconnects }
+    
+    if params[:status].nil?
+      @disconnects = Disconnect.find(:all, :conditions=>[ "status = ?", 'NEW'], :order => "created_at ASC" )
+    else
+      if params[:status] == "ALL"
+        @disconnects = Disconnect.find(:all, :order=> "created_at ASC" )
+      else
+        @disconnects = Disconnect.find(:all, :conditions => [ "status = ?", params[:status]], :order => "created_at ASC" )
+      end
     end
-  end
 
   # GET /disconnects/1
   # GET /disconnects/1.xml

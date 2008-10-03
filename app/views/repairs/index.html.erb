@@ -3,7 +3,7 @@
 <h1>Listing repairs</h1>
   <a href="<%= url_for( :controller =>:repairs, :action => "index", :only_path => "true", :protocol => "http", :status => "NEW"  ) %>">New</a> |
   <a href="<%= url_for( :controller =>:repairs, :action => "index", :only_path => "true", :protocol => "http", :status => "COMPLETED"  ) %>">Completed</a> |
-  <a href="<%= url_for( :controller =>:repairs, :action => "index", :only_path => "true", :protocol => "http", :status => nil  ) %>">All</a>
+  <a href="<%= url_for( :controller =>:repairs, :action => "index", :only_path => "true", :protocol => "http", :status => "ALL"  ) %>">All</a>
 
 <table width="100%">
   <tr>

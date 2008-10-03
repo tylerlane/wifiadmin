@@ -1,21 +1,26 @@
+<% title " Repair Lists"  %>
 <div align="center">
   <h1>Listing disconnects</h1>
-
+  <a href="<%= url_for( :controller =>:disconnects, :action => "index", :only_path => "true", :protocol => "http", :status => "NEW"  ) %>">New</a> |
+  <a href="<%= url_for( :controller =>:disconnects, :action => "index", :only_path => "true", :protocol => "http", :status => "COMPLETED"  ) %>">Completed</a> |
+  <a href="<%= url_for( :controller =>:disconnects, :action => "index", :only_path => "true", :protocol => "http", :status => "ALL"  ) %>">All</a>
   <table width="100%">
     <tr>
-      <th>Name</th>
+      <th colspan="2">Name</th>
       <th>Address</th>
       <th>City</th>
       <th>Phone No</th>
+      <th>Status</th>
     </tr>
-
+  <% count = 0 %>
   <% for disconnect in @disconnects %>
-    <tr class="list" onClick="top.location.href='<%= url_for( :controller => :disconnects, :action => "show", :only_path =>false, :protocol => 'http', :id => disconnect.id  ) %>';return true;">
+    <% count += 1 %>
+    <tr class="<% cycle( "even", "odd" %> onClick="top.location.href='<%= url_for( :controller => :disconnects, :action => "show", :only_path =>false, :protocol => 'http', :id => disconnect.id  ) %>';return true;">
+      <td><%= count %></td>
       <td><%=h disconnect.name %></td>
       <td><%=h disconnect.address %></td>
       <td><%=h disconnect.city %></td>
       <td><%=h disconnect.phone_number %></td>
-      <td><%=h disconnect.billmax_acct %></td>
       <td><%=h disconnect.status %></td>
     </tr>
   <% end %>
