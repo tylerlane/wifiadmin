@@ -3,7 +3,6 @@ class DisconnectsController < ApplicationController
   # GET /disconnects
   # GET /disconnects.xml
   def index
-    
     if params[:status].nil?
       @disconnects = Disconnect.find(:all, :conditions=>[ "status = ?", 'NEW'], :order => "created_at ASC" )
     else

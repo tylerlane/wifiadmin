@@ -1,4 +1,4 @@
-<% title " Repair Lists"  %>
+<% title " Disconnects Lists"  %>
 <div align="center">
   <h1>Listing disconnects</h1>
   <a href="<%= url_for( :controller =>:disconnects, :action => "index", :only_path => "true", :protocol => "http", :status => "NEW"  ) %>">New</a> |
@@ -15,7 +15,7 @@
   <% count = 0 %>
   <% for disconnect in @disconnects %>
     <% count += 1 %>
-    <tr class="<% cycle( "even", "odd" %> onClick="top.location.href='<%= url_for( :controller => :disconnects, :action => "show", :only_path =>false, :protocol => 'http', :id => disconnect.id  ) %>';return true;">
+    <tr class="<% cycle( "even", "odd" ) %> onClick="top.location.href='<%= url_for( :controller => :disconnects, :action => "show", :only_path =>false, :protocol => 'http', :id => disconnect.id  ) %>';return true;">
       <td><%= count %></td>
       <td><%=h disconnect.name %></td>
       <td><%=h disconnect.address %></td>
