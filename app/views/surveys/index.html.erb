@@ -10,16 +10,18 @@
   <p />
   <table width="100%">
     <tr>
-        <th>Name</th>
+        <th colspan="2">Name</th>
         <th>Address</th>
         <th>City</th>
         <th>Phone</th>
         <th>Date</th>
         <td>Status</th>
     </tr>
-
+    <% count = 0 %>
     <% for survey in @surveys %>
-        <tr class="list" onClick="top.location.href='<%= url_for( :controller => :surveys, :action => "show", :only_path =>false, :protocol => 'http', :id => survey.id  ) %>';return true;">
+        <% count += 1 %>
+        <tr class="<%= cycle( "even", "odd" ) %>" onClick="top.location.href='<%= url_for( :controller => :surveys, :action => "show", :only_path =>false, :protocol => 'http', :id => survey.id  ) %>';return true;">
+            <td><%= count %></td>
             <td><%=h survey.name %></td>
             <td><%=h survey.address %></td>
             <td><%=h survey.city %></td>

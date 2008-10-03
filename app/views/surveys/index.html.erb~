@@ -3,6 +3,7 @@
   <h1>Surveys</h1>
     <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "NEW"  ) %>">New</a> |
     <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "READY"  ) %>">Ready</a> |
+    <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "WAITING"  ) %>">Waiting</a> |
     <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "INSTALLED"  ) %>">Installed</a> |
     <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "NO-GO"  ) %>">No-Go</a> | 
     <a href="<%= url_for( :controller =>:surveys, :action => "index", :only_path => "true", :protocol => "http", :survey_status => "all"  ) %>">All</a>
@@ -16,9 +17,10 @@
         <th>Date</th>
         <td>Status</th>
     </tr>
-
+    <% count = 0 %>
     <% for survey in @surveys %>
-        <tr class="list" onClick="top.location.href='<%= url_for( :controller => :surveys, :action => "show", :only_path =>false, :protocol => 'http', :id => survey.id  ) %>';return true;">
+        <% count += 1 %>
+        <tr class="<%= cycle( "even", "odd" ) %>" onClick="top.location.href='<%= url_for( :controller => :surveys, :action => "show", :only_path =>false, :protocol => 'http', :id => survey.id  ) %>';return true;">
             <td><%=h survey.name %></td>
             <td><%=h survey.address %></td>
             <td><%=h survey.city %></td>
