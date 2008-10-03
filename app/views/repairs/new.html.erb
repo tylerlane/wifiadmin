@@ -2,7 +2,7 @@
 
 <% form_for(@repair) do |f| %>
   <%= f.error_messages %>
-  <%= render :partial => 'form', :locals => {:f => f } %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
   <li>
     <%= f.submit "Create" %>
   </li>

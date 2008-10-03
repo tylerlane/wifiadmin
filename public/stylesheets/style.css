@@ -174,8 +174,8 @@ blockquote{
        font-size: 1.3em;
 }
 
-#left table tr .even{ background-color: white; }
-#left table tr .odd{ background-color: silver; }
+#left table tr.even{ background-color: white; }
+#left table tr.odd{ background-color: silver; }
 
 #left table tr:hover{
         background-color: #ccccff;
