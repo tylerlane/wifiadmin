@@ -19,6 +19,30 @@
     <%= javascript_include_tag :defaults %>
     <%= javascript_include_tag 'textsizer' %>
     <%= javascript_include_tag 'rel' %>
+    <script language="javascript">
+	if( document.addEventListener ) document.addEventListener( 'DOMContentLoaded', form, false);
+
+	function form(){
+	  // Hide forms
+	  $( 'form.form' ).hide().end();
+
+	  // Processing
+	  $( 'form.form' ).find( 'li/label' ).not( '.nocmx' ).each( function( i ){
+	    var labelContent = this.innerHTML;
+	    var labelWidth = document.defaultView.getComputedStyle( this, '' ).getPropertyValue( 'width' );
+	    var labelSpan = document.createElement( 'span' );
+		labelSpan.style.display = 'block';
+		labelSpan.style.width = labelWidth;
+		labelSpan.innerHTML = labelContent;
+	    this.style.display = '-moz-inline-box';
+	    this.innerHTML = null;
+	    this.appendChild( labelSpan );
+	  } ).end();
+
+	  // Show forms
+	  $( 'form.form' ).show().end();
+	}
+    </script>
 </head>
 <body>
 <div id="wrap">
