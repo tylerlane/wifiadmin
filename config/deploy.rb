@@ -1,6 +1,7 @@
 default_run_options[:pty] = true
 set :repository,  "git@github.com:tylerlane/wifiadmin.git"
 set :scm, "git" 
+set :scm_verbose, true 
 set :branch, "master" 
 set :deploy_via, :remote_cache
 
@@ -21,7 +22,7 @@ set :application, "wifiadmin"
 set :deploy_to, "/opt/rails/#{application}" 
 set :user, "root" 
 set :admin_runner, "root" 
-set :use_sudo, false
+set :use_sudo, true
 
 role :app, "wireless.positech.net" 
 role :web, "wireless.positech.net" 

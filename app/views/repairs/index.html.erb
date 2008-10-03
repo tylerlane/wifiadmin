@@ -17,7 +17,7 @@
 <% count = 0 %>
 <% for repair in @repairs %>
   <% count += 1 %>
-  <tr class="<%= cycle( "even", "odd" ) %> " onClick="top.location.href='<%= url_for( :controller => :repairs, :action => "show", :only_path =>false, :protocol => 'http', :id => repair.id  ) %>';return true;">
+  <tr class="<%= cycle( "even", "odd" ) %>" onClick="top.location.href='<%= url_for( :controller => :repairs, :action => "show", :only_path =>false, :protocol => 'http', :id => repair.id  ) %>';return true;">
     <td><%= count %></td>
     <td><%=h repair.name %></td>
     <td><%=h repair.address %></td>

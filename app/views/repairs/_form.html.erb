@@ -1,0 +1,28 @@
+<fieldset>
+  <legend>Repairs</legend>
+  <ol>
+    <li>
+        <%= f.label :name %>
+        <%= f.text_field :name %>        
+    </li>
+    <li>
+        <%= f.label :address %>
+        <%= f.text_field :address %>        
+    </li>
+    <li>
+        <%= f.label :city %>
+        <%= f.text_field :city %>        
+    </li>
+    <li>
+        <%= f.label :billmax_acct %>
+        <%= f.text_field :billmax_acct %>        
+    </li>
+    <li>
+        <%= f.label :status %>
+        <%= select_tag "repair[status]", options_for_select(["NEW","COMPLETED"]) %>     
+    </li>
+    <li>
+        <%= f.label :notes %>
+        <%= f.text_area :notes %>
+    </li>
+
