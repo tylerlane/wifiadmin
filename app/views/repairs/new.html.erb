@@ -3,9 +3,10 @@
 <% form_for(@repair) do |f| %>
   <%= f.error_messages %>
   <%= render :partial => 'form', :locals => {:f => f } %>
-  <p>
+  <li>
     <%= f.submit "Create" %>
-  </p>
+  </li>
+</ol>
 <% end %>
-
+</fieldset>
 <%= link_to 'Back', repairs_path %>
