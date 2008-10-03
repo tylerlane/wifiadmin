@@ -6,6 +6,9 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 
 set :application, "wifiadmin" 
+set :default_env,  'development'
+set :rails_env,    'development'
+
 set :deploy_to, "/opt/rails/#{application}" 
 set :user, "root" 
 set :admin_runner, "root" 
