@@ -12,6 +12,7 @@ class DisconnectsController < ApplicationController
         @disconnects = Disconnect.find(:all, :conditions => [ "status = ?", params[:status]], :order => "created_at ASC" )
       end
     end
+  end
 
   # GET /disconnects/1
   # GET /disconnects/1.xml
