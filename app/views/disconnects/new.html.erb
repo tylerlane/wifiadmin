@@ -2,38 +2,12 @@
 
 <% form_for(@disconnect) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </p>
-  <p>
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
-  </p>
-  <p>
-    <%= f.label :billmax_acct %><br />
-    <%= f.text_field :billmax_acct %>
-  </p>
-  <p>
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-  <p>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+  <li>
     <%= f.submit "Create" %>
-  </p>
+  </li>
+</ol>
 <% end %>
+</fieldset>
 
 <%= link_to 'Back', disconnects_path %>
