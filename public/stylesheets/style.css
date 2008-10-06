@@ -177,7 +177,12 @@ blockquote{
 #left table tr.even{ background-color: white; }
 #left table tr.odd{ background-color: silver; }
 
-#left table tr:hover{
+#left table tr.even:hover{
+        background-color: #ccccff;
+        /*font-weight: bold;*/
+        color: black;
+}
+#left table tr.odd:hover{
         background-color: #ccccff;
         /*font-weight: bold;*/
         color: black;
