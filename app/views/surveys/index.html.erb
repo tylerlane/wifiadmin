@@ -21,7 +21,7 @@
     <% for survey in @surveys %>
         <% count += 1 %>
         <tr class="<%= cycle( "even", "odd" ) %>" onClick="top.location.href='<%= url_for( :controller => :surveys, :action => "show", :only_path =>false, :protocol => 'http', :id => survey.id  ) %>';return true;">
-            <td><%= count %></td>
+            <td><%=h count %></td>
             <td><%=h survey.name %></td>
             <td><%=h survey.address %></td>
             <td><%=h survey.city %></td>
