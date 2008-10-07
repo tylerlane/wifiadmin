@@ -1,35 +1,50 @@
-<p>
-  <b>Name:</b>
-  <%=h @repair.name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%=h @repair.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%=h @repair.city %>
-</p>
-
-<p>
-  <b>Phone number:</b>
-  <%=h @repair.phone_number %>
-</p>
-<p>
-  <b>Billmax acct:</b>
-  <%=h @repair.billmax_acct %>
-</p>
-<p>
-  <b>Status</b>
-  <%=h @repair.status %>
-</p>
-<p>
-  <b>Notes:</b>
-  <%=h @repair.notes %>
-</p>
-
-
+<div align="center">
+<table width="500px">
+  <tr>
+    <th colspan="2"><h2>Repair</h2></th>
+  </tr>
+  <tr>
+    <td><b>Customer Name</b></td>
+    <td><%=h @repair.name %></td>
+  </tr>
+  <tr>
+    <td><b>Status</b></td>
+    <td><%=h @repair.status %></td>
+  </tr>
+  <tr>
+    <td><b>Address</b></td>
+    <td><%=h @repair.address %></td>
+  </tr>
+  <tr>
+    <td><b>City</b></td>
+    <td><%=h @repair.city %></td>
+  </tr>
+  <tr>
+    <td><b>Phone Number</b></td>
+    <td><%=h @repair.phone_number %></td>
+  </tr>
+  <tr>
+    <td><b>Billmax Account</b></td>
+    <td><%=h @repair.billmax_acct %></td>
+  </tr>
+  <tr>
+    <td><b>Created On</b></td>
+    <td><%=h @repair.created_at.strftime( "%B %d, %Y") %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Notes</b></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%=h @repair.notes %>
+    </td>
+  </tr>
+  </table>
+  
+  <br />
+  
 <%= link_to 'Edit', edit_repair_path(@repair) %> |
 <%= link_to 'Back', repairs_path %>
+</div>
+
+
