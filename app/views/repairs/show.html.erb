@@ -12,6 +12,10 @@
     <td><%=h @repair.status %></td>
   </tr>
   <tr>
+    <td><b>IP Address</b></td>
+    <td><%=h @repair.ip_address %></td>
+  </tr>
+  <tr>
     <td><b>Address</b></td>
     <td><%=h @repair.address %></td>
   </tr>
@@ -38,6 +42,17 @@
     <td colspan="2">
       <%=h @repair.notes %>
     </td>
+  </tr>
+  <tr>
+    <td colspan="2"><hr /></td>
+  </tr>
+  <tr>
+     <td><b>Date Completed</b></td>
+     <td><%=h @repair.completed_date %></td>
+  </tr>
+  <tr>
+     <td><b>Completed By</b></td>
+     <td><%=h @repair.completed_by %></td>
   </tr>
   </table>
   

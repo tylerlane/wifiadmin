@@ -9,18 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080803132432) do
+ActiveRecord::Schema.define(:version => 20081007194409) do
 
   create_table "disconnects", :force => true do |t|
     t.string   "name"
     t.string   "address"
     t.string   "city"
     t.string   "phone_number"
-    t.integer  "billmax_acct", :limit => 11
+    t.integer  "billmax_acct"
     t.string   "status"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "completed_date"
+    t.string   "completed_by",   :default => "Jay Fahnestock"
   end
 
   create_table "ips", :force => true do |t|
@@ -30,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20080803132432) do
     t.string   "name"
     t.string   "ssid"
     t.string   "channel"
-    t.integer  "network_id",  :limit => 11
+    t.integer  "network_id"
     t.string   "device_type"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -53,12 +55,14 @@ ActiveRecord::Schema.define(:version => 20080803132432) do
     t.string   "address"
     t.string   "city"
     t.string   "phone_number"
-    t.integer  "billmax_acct", :limit => 11
-    t.string   "status"
+    t.integer  "billmax_acct"
+    t.string   "status",         :default => "NEW"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "completed",                  :default => false
+    t.string   "ip_address"
+    t.datetime "completed_date"
+    t.string   "completed_by",   :default => "Jay Fahnestock"
   end
 
   create_table "surveys", :force => true do |t|
@@ -76,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20080803132432) do
     t.string   "survey_status", :default => "active"
     t.text     "notes"
     t.datetime "completed_on"
+    t.datetime "surveyed_date"
+    t.string   "surveyed_by",   :default => "Jay Fahnestock"
   end
 
   create_table "users", :force => true do |t|

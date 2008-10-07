@@ -26,7 +26,21 @@
         <%= select_tag "repair[status]", options_for_select(["NEW","COMPLETED"]) %>     
     </li>
     <li>
+        <%= f.label :ip_address, "IP Address" %>
+        <%= f.text_field :ip_address %>
+    </li>
+    <li>
         <%= f.label :notes %>
         <%= f.text_area :notes %>
     </li>
+    <li>
+        <%= f.label :completed_date %>
+        <%= f.datetime_select :completed_date, :order => [:month, :day, :year ], :include_blank => true %>
+    </li>
+    <li>
+        <%= f.label :completed_by %>
+        <%= select_tag "repair[completed_by]", options_for_select(["", "Jay Fahnestock","Ray Keling", "Jim Davidson", "Tyler Lane", "Clayton Bennett", "Eric Cook" ]) %>
+    </li>
+
+
 
