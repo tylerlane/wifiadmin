@@ -15,7 +15,7 @@
   </tr>
 
 <% for ip in @ips %>
-  <tr class="<%= cycle( "even", "odd" %>" onClick="top.location.href='<%= url_for( :controller => :ips, :action => "edit", :only_path =>false, :protocol => 'http', :network_id => ip.network_id, :id => ip.id  ) %>';return true;">
+  <tr class="<%= cycle( "even", "odd" ) %>" onClick="top.location.href='<%= url_for( :controller => :ips, :action => "edit", :only_path =>false, :protocol => 'http', :network_id => ip.network_id, :id => ip.id  ) %>';return true;">
     <td><%=h ip.ip_address %></td>
     <td><%=h ip.mac_address %></td>
     <td><%=h ip.name %></td>
