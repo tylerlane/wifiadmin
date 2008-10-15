@@ -29,4 +29,15 @@
         <%= f.label :notes %>
         <%= f.text_area :notes %>
     </li>
+    <li>
+        <hr />
+    </li>
+    <li>
+        <%= f.label :completed_date %>
+        <%= f.datetime_select :completed_date, :order => [:month, :day, :year ], :include_blank => true %>
+    </li>
+    <li>
+        <%= f.label :completed_by %>
+        <%= select_tag "disconnects[completed_by]", options_for_select(["", "Jay Fahnestock","Ray Keling", "Jim Davidson", "Tyler Lane", "Clayton Bennett", "Eric Cook" ]) %>
+    </li>
 
