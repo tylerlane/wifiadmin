@@ -32,7 +32,16 @@
   <b>Notes:</b>
   <%=h @disconnect.notes %>
 </p>
-
+<p>
+  <hr />
+</p>
+  <b>Completed Date</b>
+  <%=h @disconnect.completed_date %>
+</p>
+<p>
+  <b>Completed By</b>
+  <%=h @disconnect.completed_by %>
+</p>
 
 <%= link_to 'Edit', edit_disconnect_path(@disconnect) %> |
 <%= link_to 'Back', disconnects_path %>
